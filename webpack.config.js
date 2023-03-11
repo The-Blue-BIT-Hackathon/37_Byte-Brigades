@@ -2,10 +2,14 @@ const path = require('path')
 
 module.exports={
     mode: 'development',
-    entry: './src/signup.js',
+    entry: {
+        home: './src/home/index.js',
+        login: './src/login/index.js',
+        signup: './src/signup/index.js',
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'signup.js'
+        filename: '[name].js',
+        path: __dirname + '/dist',
     },
     watch:true
 }
