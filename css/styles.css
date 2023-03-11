@@ -1,6 +1,10 @@
 body {
     font-family: 'Open Sans', sans-serif;
   }
+  .login-page
+  {
+    background-color: #FCEEC7;
+  }
   
   .login-container {
     background-color: #FFFFFF;
