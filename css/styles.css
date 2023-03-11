@@ -1,5 +1,5 @@
 body {
-    background-color: #FCEEC7;
+    font-family: 'Open Sans', sans-serif;
   }
   
   .login-container {
@@ -53,6 +53,7 @@ body {
   .signup {
     margin-left: 150px;
   }
+<<<<<<< HEAD
 
   .filter-panel {
     background-color: #f5f5f5;
@@ -98,3 +99,81 @@ body {
     }
   }
   
+=======
+  .navbar
+  {
+    padding: 1.5rem 0 1.5rem;
+  }
+
+
+.navbar-brand
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-left: 2%;
+}
+
+.nav-item
+{
+    padding: 0 18px;
+}
+
+.nav-link
+{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.desc
+{
+  padding: 20rem;
+  background-image: url(bgimg.img);
+	background-size: cover;
+  background-color: #FCEEC7;
+	/* height: 500px; /* Set the height of the container */
+	/* width: 100%; Set the width of the container */ 
+			/* You can add other CSS styles to the container as needed */
+  
+}
+
+.exp
+{
+  background-color: white;
+  text-align: center;
+}
+
+.Explore
+{
+  padding: 7% 15%;
+  background-color: white;
+}
+
+.explore-box1
+{
+  text-align: center;
+}
+
+.explore-box2
+{
+  text-align: center;
+}
+
+.exp-para
+{
+  padding-top: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.exp-btn
+{
+  margin-top: 30px;
+}
+
+.container-fluid
+{
+  padding: 3% 15%;
+}
+>>>>>>> 69ebc1ef039c3c2457561443fdf355ec0c22b30b
