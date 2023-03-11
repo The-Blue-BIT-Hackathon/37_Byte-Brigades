@@ -124,12 +124,13 @@ body {
 
 .desc
 {
-  padding: 20rem;
-  background-image: url(bgimg.img);
-	background-size: cover;
-  background-color: #FCEEC7;
-	/* height: 500px; /* Set the height of the container */
-	/* width: 100%; Set the width of the container */ 
+    padding: 20rem;
+    background-image: url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2067&q=80");
+    background-size: cover;
+    background-position: center;
+    background-color: #FCEEC7; 
+	height: 500px; /* Set the height of the container*/
+	width: 100%; /*Set the width of the container  */
 			/* You can add other CSS styles to the container as needed */
   
 }
@@ -165,6 +166,11 @@ body {
   font-weight: 500;
 }
 
+.text {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
 .exp-btn
 {
   margin-top: 30px;
@@ -174,3 +180,4 @@ body {
 {
   padding: 3% 15%;
 }
+
