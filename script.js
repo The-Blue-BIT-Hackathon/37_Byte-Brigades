@@ -11,9 +11,9 @@ form.addEventListener('submit', (e) => {
   // TODO: send request to server to authenticate user
 });
 
-loginButton.addEventListener('click', () => {
-  form.submit();
-});
+// loginButton.addEventListener('click', () => {
+//   form.submit();
+// });
 
 
 // const button = document.getElementById('login');
