@@ -36,6 +36,7 @@ const colRef = collection(db, 'Profile')
     signInWithEmailAndPassword(auth, email, password)
     .then((cred)=>{
         console.log('user logged in:', cred.user)
+        window.location = "preferences.html"
     })
     .catch((err) =>{
         console.log(err.message)
