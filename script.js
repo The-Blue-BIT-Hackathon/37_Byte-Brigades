@@ -15,8 +15,19 @@ loginButton.addEventListener('click', () => {
   form.submit();
 });
 
+
 // const button = document.getElementById('login');
 
 // button.addEventListener('click', () => {
 //   window.location.href = 'login.html';
 // });
+
+function redirectToLogin() {
+    window.location.href = "login.html";
+  }
+function redirectToSignUp() {
+    window.location.href = "signup.html";
+  }
+function redirectToPreference() {
+    window.location.href = "preference.html";
+  }
