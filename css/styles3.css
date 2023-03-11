@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .card {
     display: inline-block;
     margin: 10px;
@@ -28,4 +29,68 @@
 
 .card.selected h3 {
     color: white;
+=======
+body
+{
+    background-color: #FCEEC7;
+}
+
+.card {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card.selected {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card.selected:hover {
+    transform: none;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card.selected h3 {
+    color: white;
+}
+
+.top
+{
+    padding: 2rem;
+    background-color: #FCEEC7;
+}
+
+h1
+{
+    padding: 2%;
+}
+h2
+{
+    padding-left: 2%;
+    padding-bottom: 1%;
+}
+
+.cards
+{
+    padding: 10rem 10rem 2rem 10rem;
+}
+
+.pref
+{
+    padding: 2rem 2rem 6rem 2rem;
+    text-align: center;
+>>>>>>> 9e1ab939f6323c9ac44450dab18ccff7f9df47bd
 }
