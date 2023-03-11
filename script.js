@@ -29,5 +29,7 @@ function redirectToSignUp() {
     window.location.href = "signup.html";
   }
 function redirectToPreference() {
-    window.location.href = "preference.html";
+    window.location.href = "preferences.html";
   }
+
+
