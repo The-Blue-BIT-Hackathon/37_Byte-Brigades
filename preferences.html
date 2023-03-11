@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Preferences</title>
+	<style>
+		.card {
+			display: inline-block;
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid gray;
+			border-radius: 5px;
+			background-color: white;
+			box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.card:hover {
+			transform: translateY(-2px);
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		.card.selected {
+			background-color: #007bff;
+			color: white;
+			box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		.card.selected:hover {
+			transform: none;
+			box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		.card.selected h3 {
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>Food Preferences</h1>
+	<h2>Choose your preferences:</h2>
+	<div class="card veg" onclick="toggleSelection('veg')">
+		<h3>Vegetarian</h3>
+		<p>I don't eat meat or fish</p>
+	</div>
+	<div class="card non-veg" onclick="toggleSelection('non-veg')">
+		<h3>Non-vegetarian</h3>
+		<p>I eat meat and/or fish</p>
+	</div>
+	<div class="card allergy" onclick="toggleSelection('allergy')">
+		<h3>Allergy</h3>
+		<p>I have food allergies</p>
+	</div>
+	<div class="card intolerance" onclick="toggleSelection('intolerance')">
+		<h3>Intolerance</h3>
+		<p>I have food intolerances</p>
+	</div>
+	<form>
+		<input type="hidden" id="preferences" name="preferences">
+		<button type="submit">Save Preferences</button>
+	</form>
+	<script>
+		var selectedCards = [];
+
+		function toggleSelection(cardType) {
+			var card = document.querySelector('.' + cardType);
+			if (selectedCards.includes(cardType)) {
+				card.classList.remove('selected');
+				selectedCards.splice(selectedCards.indexOf(cardType), 1);
+			} else {
+				card.classList.add('selected');
+				selectedCards.push(cardType);
+			}
+			document.getElementById('preferences').value = selectedCards.join(',');
+		}
+	</script>
+</body>
+</html>
