@@ -41,20 +41,19 @@ signupForm.addEventListener('submit', (e) => {
   const email = signupForm.email.value
   const password = signupForm.password.value
 
-  addDoc(colRef, {
-    name: signupForm.name.value,
-    email: signupForm.email.value,
-    password: signupForm.password.value
-    // createdAt: serverTimestamp()
-  })
-
   createUserWithEmailAndPassword(auth, email, password)
     .then((cred) => {
+      addDoc(colRef, {
+        name: signupForm.name.value,
+        email: signupForm.email.value,
+        password: signupForm.password.value
+        // createdAt: serverTimestamp()
+      })
       console.log('user created:', cred.user)
       signupForm.reset()
       window.location = "preferences.html"
     })
     .catch((err) => {
-      console.log(err.message)
+      alert(err.message)
     })
 })

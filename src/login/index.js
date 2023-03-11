@@ -39,7 +39,7 @@ const colRef = collection(db, 'Profile')
         window.location = "index.html"
       })
       .catch((err) => {
-        console.log(err.message)
+        alert(err.message)
       })
   
   })
