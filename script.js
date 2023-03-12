@@ -35,6 +35,10 @@ function redirectToExplore() {
     window.location.href = "explore.html";
   }
 
+  function redirectToHome() {
+    window.location.href = "index.html";
+  }
+
   var selectedCards = [];
 
   function toggleSelection(cardType) {
@@ -48,3 +52,14 @@ function redirectToExplore() {
     }
     document.getElementById('preferences').value = selectedCards.join(',');
   }
+
+
+
+const priceSlider = document.getElementById("price-slider");
+const priceValue = document.getElementById("price-value");
+
+priceValue.textContent = priceSlider.value;
+
+priceSlider.addEventListener("input", function() {
+  priceValue.textContent = priceSlider.value;
+});
