@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, onSnapshot } from '@firebase/firestore'
-import { getAuth, signInWithEmailAndPassword } from '@firebase/auth'
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDTbVXdbcNdfLM4bninNCNkw_qHhOcu5es",
@@ -46,6 +46,16 @@ const colRef = collection(db, 'Profile')
     signInWithEmailAndPassword(auth, email, password)
       .then((cred) => {
         console.log('user logged in:', cred.user)
+        setPersistence(auth, browserSessionPersistence)
+        var user = auth.currentUser;
+
+if (user) {
+  // User is signed in.
+  console.log(user)
+} else {
+  // No user is signed in.
+  console.log("NO")
+}
         window.location = "index.html"
       })
       .catch((err) => {
