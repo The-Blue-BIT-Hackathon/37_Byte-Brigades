@@ -78,17 +78,23 @@
 	<script>
 		var selectedCards = [];
 
-		function toggleSelection(cardType) {
-			var card = document.querySelector('.' + cardType);
-			if (selectedCards.includes(cardType)) {
-				card.classList.remove('selected');
-				selectedCards.splice(selectedCards.indexOf(cardType), 1);
-			} else {
-				card.classList.add('selected');
-				selectedCards.push(cardType);
-			}
-			document.getElementById('preferences').value = selectedCards.join(',');
-		}
+function toggleSelection(cardType) {
+	var card = document.querySelector('.' + cardType);
+	if (selectedCards.includes(cardType)) {
+		card.classList.remove('selected');
+		selectedCards.splice(selectedCards.indexOf(cardType), 1);
+		console.log("unselected")
+		console.log(selectedCards)
+	} else {
+		card.classList.add('selected');
+		selectedCards.push(cardType);
+		console.log(cardType)
+		console.log("selected")
+		console.log(selectedCards)
+	}
+	document.getElementById('preferences').value = selectedCards.join(',');
+}
 	</script>
+	<script src="dist/preferences.js"></script>
 </body>
 </html>
