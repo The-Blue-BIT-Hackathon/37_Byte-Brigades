@@ -12,7 +12,6 @@ import{
     signOut, signInWithEmailAndPassword,
     onAuthStateChanged
 }from'firebase/auth'
-import{getDatabse, ref} from"firebase/database"
 const firebaseConfig = {
     apiKey: "AIzaSyDTbVXdbcNdfLM4bninNCNkw_qHhOcu5es",
     authDomain: "mess-3a90c.firebaseapp.com",
@@ -28,12 +27,6 @@ const firebaseConfig = {
  //init services
 const db = getFirestore()
 const auth = getAuth()
-  
-function writeUserData(userId, name, email)
-const db1 = getDatabase()
-const reference = ref(db1, 'users/' + userId)
-
-
 
  //collection ref
  const colRef = collection(db, 'Profile')
@@ -49,27 +42,26 @@ const reference = ref(db1, 'users/' + userId)
     console.log(Profile)
   })
 
-  const signupForm = document.querySelector('.signup')
-  signupForm.addEventListener('submit', (e) =>{
-    e.preventDefault()
+//   const signupForm = document.querySelector('.signup')
+//   signupForm.addEventListener('submit', (e) =>{
+//     e.preventDefault()
   
-    const email= signupForm.email.value
-    const password = signupForm.password.value
+//     const email= signupForm.email.value
+//     const password = signupForm.password.value
 
-    addDoc(colRef, {
-        email: signupForm.email.value,
-        password : signupForm.password.value
-    })
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((cred) =>{
-        console.log('user created:', cred.user)
-        window.location = "preferences.html"
-        signupForm.reset()
-    })
-    .catch((err) => {
-        console.log(err.message) 
-    })
-  })
+//     addDoc(colRef, {
+//         email: signupForm.email.value,
+//         password : signupForm.password.value
+//     })
+//     createUserWithEmailAndPassword(auth, email, password)
+//     .then((cred) =>{
+//         console.log('user created:', cred.user)
+//         signupForm.reset()
+//     })
+//     .catch((err) => {
+//         console.log(err.message)
+//     })
+//   })
 
 //   const logoutButton = document.querySelector('.logout')
 //   logoutButton.addEventListener('click', ()=>{
@@ -82,19 +74,19 @@ const reference = ref(db1, 'users/' + userId)
 //     })
 //   })
 
-//   const loginForm = document.querySelector('.login')
-//   loginForm.addEventListener('submit', (e) =>{
-//     e.preventDefault()
+  const loginForm = document.querySelector('.login')
+  loginForm.addEventListener('submit', (e) =>{
+    e.preventDefault()
 
-//     const email= loginForm.email.value
-//     const password = loginForm.password.value
+    const email= loginForm.email.value
+    const password = loginForm.password.value
 
-//     signInWithEmailAndPassword(auth, email, password)
-//     .then((cred)=>{
-//         console.log('user logged in:', cred.user)
-//         window.location = "preferences.html"
-//     })
-//     .catch((err) =>{
-//         console.log(err.message)
-//     })
-//   })
+    signInWithEmailAndPassword(auth, email, password)
+    .then((cred)=>{
+        console.log('user logged in:', cred.user)
+        window.location = "preferences.html"
+    })
+    .catch((err) =>{
+        console.log(err.message)
+    })
+  })

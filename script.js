@@ -11,15 +11,8 @@ form.addEventListener('submit', (e) => {
   // TODO: send request to server to authenticate user
 });
 
-loginButton.addEventListener('click', () => {
-  form.submit();
-});
-
-
-// const button = document.getElementById('login');
-
-// button.addEventListener('click', () => {
-//   window.location.href = 'login.html';
+// loginButton.addEventListener('click', () => {
+//   form.submit();
 // });
 
 function redirectToLogin() {
