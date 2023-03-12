@@ -27,51 +27,61 @@ const firebaseConfig = {
 const db = getFirestore()
 const auth = getAuth()
 
+var user = auth.currentUser;
+
+if (user) {
+  // User is signed in.
+  console.log(user)
+} else {
+  // No user is signed in.
+  console.log("NO")
+}
+
  //collection ref
- const colRef = collection(db, 'Profile')
+//  const colRef = collection(db, 'Profile')
 
-//  const q = query(colRef, where("name", "==", "Charul"), orderBy('name', 'desc'))
- //get collection data
+// //  const q = query(colRef, where("name", "==", "Charul"), orderBy('name', 'desc'))
+//  //get collection data
 
-  onSnapshot(colRef, (snapshot)=> {
-    let Profile = []
-    snapshot.docs.forEach((doc)=>{
-        Profile.push({...doc.data(), id: doc.id})
-    })
-    console.log(Profile)
-  })
+//   onSnapshot(colRef, (snapshot)=> {
+//     let Profile = []
+//     snapshot.docs.forEach((doc)=>{
+//         Profile.push({...doc.data(), id: doc.id})
+//     })
+//     console.log(Profile)
+//   })
 
-  const signupForm = document.querySelector('.signup')
-  signupForm.addEventListener('submit', (e) =>{
-    e.preventDefault()
+//   const signupForm = document.querySelector('.signup')
+//   signupForm.addEventListener('submit', (e) =>{
+//     e.preventDefault()
   
-    const email= signupForm.email.value
-    const password = signupForm.password.value
+//     const email= signupForm.email.value
+//     const password = signupForm.password.value
 
-    addDoc(colRef, {
-        email: signupForm.email.value,
-        password : signupForm.password.value
-    })
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((cred) =>{
-        console.log('user created:', cred.user)
-        signupForm.reset()
-    })
-    .catch((err) => {
-        console.log(err.message)
-    })
-  })
+//     addDoc(colRef, {
+//         email: signupForm.email.value,
+//         password : signupForm.password.value
+//     })
+//     createUserWithEmailAndPassword(auth, email, password)
+//     .then((cred) =>{
+//         console.log('user created:', cred.user)
+//         signupForm.reset()
+//     })
+//     .catch((err) => {
+//         console.log(err.message)
+//     })
+//   })
 
-  const logoutButton = document.querySelector('.logout')
-  logoutButton.addEventListener('click', ()=>{
-    signOut(auth)
-    .then(() => {
-        console.log('the user signed out')
-    })
-    .catch((err) =>{
-        console.log(err.message)
-    })
-  })
+//   const logoutButton = document.querySelector('.logout')
+//   logoutButton.addEventListener('click', ()=>{
+//     signOut(auth)
+//     .then(() => {
+//         console.log('the user signed out')
+//     })
+//     .catch((err) =>{
+//         console.log(err.message)
+//     })
+//   })
 
   const loginForm = document.querySelector('.login')
   loginForm.addEventListener('submit', (e) =>{
@@ -88,3 +98,16 @@ const auth = getAuth()
         console.log(err.message)
     })
   })
+
+const unsubAuth = onAuthStateChanged(auth, (user) => {
+  console.log('user status changed:', user)
+  if (user) {
+    // User is signed in.
+    console.log(user)
+    document.getElementById("div").style.display;
+  } else {
+    // No user is signed in.
+    console.log("NO")
+    document.getElementById("div").style.display = "none"; 
+  }
+})

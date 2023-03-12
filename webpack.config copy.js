@@ -4,7 +4,7 @@ module.exports={
     mode: 'development',
     entry: {
         home: './src/home/index.js',
-        signup: './src/signup/index.js',
+        signup: './src/signup/index.js'
     },
     output: {
         filename: '[name].js',

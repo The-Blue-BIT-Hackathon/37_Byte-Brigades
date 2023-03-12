@@ -5,7 +5,7 @@ import {
 } from 'firebase/firestore'
 import {
   getAuth,
-  createUserWithEmailAndPassword,
+  createUserWithEmailAndPassword, onAuthStateChanged
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -21,6 +21,16 @@ const app = initializeApp(firebaseConfig)
 
 const db = getFirestore()
 const auth = getAuth()
+
+var user = auth.currentUser;
+
+if (user) {
+  // User is signed in.
+  console.log(user)
+} else {
+  // No user is signed in.
+  console.log("NO")
+}
 
 const colRef = collection(db, 'Profile')
 
@@ -51,9 +61,13 @@ signupForm.addEventListener('submit', (e) => {
       })
       console.log('user created:', cred.user)
       signupForm.reset()
-      window.location = "preferences.html"
+      window.location = "index.html"
     })
     .catch((err) => {
       alert(err.message)
     })
+})
+
+onAuthStateChanged(auth, (user) => {
+  console.log('user status changed:', user)
 })

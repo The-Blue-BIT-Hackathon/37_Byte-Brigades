@@ -1,0 +1,52 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: grey  ;
+    background-color: rgba(35, 31, 31, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin-top: 7rem;
+ }
+
+ 
+ form {
+    margin-top: 30px;
+ }
+
+ label
+ {
+   color: black;
+   font-family: 'Metropolis', sans-serif;
+   padding-left: 8rem;
+ }
+
+ .btn-primary {
+    padding-top: 0.5rem;
+    background-color: #FCAF17;
+    border-color: #dc3545;
+    width: 50%;
+    margin-left: 7rem;
+ }
+ 
+ .btn-primary:hover {
+    background-color: #FCAF17;
+    border-color: #FCAF17;
+ }
+
+ .form-group
+ {
+    padding-bottom: 2rem;
+ }
+
+ .container
+ {
+    padding-top: 0.5rem ;
+ }
+
+
+ .Login-page {
+    background-color: #f4d598;
+    padding: 40px;
+ }
