@@ -53,6 +53,11 @@ function redirectToExplore() {
     document.getElementById('preferences').value = selectedCards.join(',');
   }
 
+  function goToExplore() {
+    var selectedPreferences = selectedCards.join(',');
+    window.location.href = 'explore.html?preferences=' + selectedPreferences;
+  }
+  
 
 
 const priceSlider = document.getElementById("price-slider");
