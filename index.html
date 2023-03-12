@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
 
     <!-- css-stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
@@ -24,8 +27,8 @@
 
     <section class="Title">
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Mess</a>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffffff;">
+            <a class="navbar-brand" href="#">DishWizard</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -48,26 +51,39 @@
 
     <section class="Description">
         <div class = "desc">
-            <h1>DishWizard</h1>
-            <h1 class="text">Your Ulitmate Menu Matchmaker</h1>
-        </div>
-        
+            <h1 class="text-reveal1 fade-in" style="color: #333333;">An Enchanting Catering Service</h1>
+            <h2 class="text-reveal2 fade-in" style="color: #333333;">Transform Your Event with DishWizard's Culinary Expertise Making Magic Happen with Our Premier Catering Services</h1>
+        </div>      
     </section>
 
     <section class="Explore">
         <div class="row">
-            <div class="explore-box1 col-12 col-md-6">
-                <h3>EXPLORE</h3>
-                <p class="exp-para">nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
+            <div class="explore-box1 col-12 col-md-6 fade-in2" style="color: #006400;">
+                <h2 style="font-size: 2.5rem">EXPLORE</h2>
+                <p class="exp-para">Discover our tantalizing menu offerings and custom catering services. From hors d'oeuvres to entrees, we use only the freshest, highest quality ingredients to ensure every dish is bursting with flavor. Contact us today to begin planning your unforgettable catering experience.</p>
             </div>
-            <div class="explore-box2 col-12 col-md-6">
-                <a class="exp-btn btn btn-dark btn-lg" onclick="redirectToExplore()" role="button">Explore</a>
+            <div class="explore-box2 col-12 col-md-6 fade-in2" style="color: #006400;">
+                <a class="exp-btn btn btn-lg" style="background-color: #f4b25c;" onclick="redirectToExplore()" role="button">Explore</a>
                 <!-- <button type="button" class="btn btn-dark btn-lg">
                     Explore
                 </button> -->
             </div>
         </div>
     </section>
+    <script>
+      window.addEventListener("load", function() {
+      const elements = document.querySelectorAll(".fade-in");
+      for (let i = 0; i < elements.length; i++) {
+          elements[i].classList.add("show");
+        }
+      });
+      window.addEventListener("load", function() {
+      const elements = document.querySelectorAll(".fade-in2");
+      for (let i = 0; i < elements.length; i++) {
+          elements[i].classList.add("show");
+        }
+      });
+    </script>
       
       <!-- Sign up modal dialog
       <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
