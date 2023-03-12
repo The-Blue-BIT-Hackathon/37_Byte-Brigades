@@ -1,3 +1,35 @@
+
+.card {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card.selected {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card.selected:hover {
+    transform: none;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card.selected h3 {
+    color: white;
+}
 body
 {
     background-color: #FCEEC7;
@@ -60,6 +92,7 @@ h2
 {
     padding: 2rem 2rem 6rem 2rem;
     text-align: center;
+
 }
 
 .card-img-overlay {
@@ -77,3 +110,4 @@ h2
     border: 8px solid rgb(51, 244, 51);
   }
   
+

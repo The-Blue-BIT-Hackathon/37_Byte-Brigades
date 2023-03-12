@@ -31,5 +31,20 @@ function redirectToSignUp() {
 function redirectToPreference() {
     window.location.href = "preferences.html";
   }
+function redirectToExplore() {
+    window.location.href = "explore.html";
+  }
 
+  var selectedCards = [];
 
+  function toggleSelection(cardType) {
+    var card = document.querySelector('.' + cardType);
+    if (selectedCards.includes(cardType)) {
+      card.classList.remove('selected');
+      selectedCards.splice(selectedCards.indexOf(cardType), 1);
+    } else {
+      card.classList.add('selected');
+      selectedCards.push(cardType);
+    }
+    document.getElementById('preferences').value = selectedCards.join(',');
+  }
