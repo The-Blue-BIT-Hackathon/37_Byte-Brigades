@@ -1,0 +1,49 @@
+.container {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+.filter-container {
+    padding: 25px;
+    background-color: #c8d8c9;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 100%;
+}
+
+
+.card-img-top {
+	height: 200px;
+	object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-body {
+	padding: 10px;
+}
+
+.title {
+    padding: 20px;
+}
+
+.card {
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 162, 0, 0.5);
+    border-radius: 15px;
+
+
+}
+.col-md-10 {
+    padding: 10px;
+
+}
+
+.container-fluid {
+    width: 100%;
+
+}
+
+#explore-pg {
+    background-color: #c8d8c9;
+}
