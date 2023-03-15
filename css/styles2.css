@@ -1,0 +1,70 @@
+.container {
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+
+.filter-container {
+    padding: 25px;
+    background-color: #c8d8c9;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 100%;
+}
+
+
+.card-img-top {
+	height: 200px;
+	object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-body {
+	padding: 10px;
+}
+
+.title {
+    padding: 20px;
+}
+
+.card {
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 162, 0, 0.5);
+    border-radius: 15px;
+
+
+}
+.col-md-10 {
+    padding: 10px;
+
+}
+
+.navbar
+{
+  padding: 0.3rem 0 0.3rem;
+  color: solid white;
+}
+
+
+.navbar-brand
+{
+  /* font-size: 2.5rem;
+  font-weight: 700; */
+  padding-left: 2%;
+  font-family: 'Metropolis', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); */
+}
+
+.nav-item
+{
+  padding: 0 18px;
+}
+
+.nav-link
+{
+  font-size: 1.2rem;
+  font-weight: 300;
+}
