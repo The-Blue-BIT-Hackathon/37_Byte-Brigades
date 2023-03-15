@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 //Admin or Student login
 
 
-=======
->>>>>>> 867551d9cdf92eebee7df5cdb6efa77a1a0a1584
 $('#options').change(function() {
 	var selectedOption = $(this).val();
 	console.log('Selected option: ' + selectedOption);
 	// Do something with the selected option
 });
 
-<<<<<<< HEAD
 
 //to create card
 
@@ -48,7 +44,7 @@ function createCard(imageUrl, title, price) {
 	switchToggle.classList.add("switch");
 	content.appendChild(switchToggle);
   
-	// Create input element
+//	Create input element
 	const switchInput = document.createElement("input");
 	switchInput.type = "checkbox";
 	switchInput.classList.add("toggle-button");
@@ -126,9 +122,7 @@ function createCard(imageUrl, title, price) {
     };
   
     filterFoodItems();
-=======
-// $(document).ready(function() {
-//     // Get the checkbox element
+    //     // Get the checkbox element
 //     var createCardCheckbox = document.getElementById("createCardCheckbox");
 //     // Add event listener to the checkbox
 //     createCardCheckbox.addEventListener('change', function() {
@@ -271,4 +265,3 @@ $(document).ready(function() {
     }
   });
   
->>>>>>> 867551d9cdf92eebee7df5cdb6efa77a1a0a1584
