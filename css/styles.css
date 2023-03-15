@@ -1,0 +1,135 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  .login-page
+  {
+    background-color: #FCEEC7;
+  }
+  
+  .login-container {
+    background-color: #FFFFFF;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  }
+  
+  button {
+    background-color: #FFC107;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #FFA000;
+  }
+  
+  p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .signup {
+    margin-left: 150px;
+  }
+  .navbar
+  {
+    padding: 1.5rem 0 1.5rem;
+  }
+
+
+.navbar-brand
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-left: 2%;
+}
+
+.nav-item
+{
+    padding: 0 18px;
+}
+
+.nav-link
+{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.desc
+{
+  padding: 20rem;
+  background-image: url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80");
+    background-size: cover;
+  background-color: #FCEEC7;
+	/* height: 500px; /* Set the height of the container */
+	/* width: 100%; Set the width of the container */ 
+			/* You can add other CSS styles to the container as needed */
+  
+}
+
+.exp
+{
+  background-color: white;
+  text-align: center;
+}
+
+.Explore
+{
+  padding: 7% 15%;
+  background-color: white;
+}
+
+.explore-box1
+{
+  text-align: center;
+}
+
+.explore-box2
+{
+  text-align: center;
+}
+
+.exp-para
+{
+  padding-top: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.exp-btn
+{
+  margin-top: 30px;
+}
+
+.container-fluid
+{
+  padding: 3% 15%;
+}

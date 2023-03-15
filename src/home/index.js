@@ -11,7 +11,7 @@ import{
     signOut, signInWithEmailAndPassword,
     onAuthStateChanged
 }from'firebase/auth'
-import{getDatabse, ref} from"firebase/database"
+import{getDatabase, ref} from'firebase/database'
 const firebaseConfig = {
     apiKey: "AIzaSyDTbVXdbcNdfLM4bninNCNkw_qHhOcu5es",
     authDomain: "mess-3a90c.firebaseapp.com",
@@ -28,11 +28,9 @@ const firebaseConfig = {
 const db = getFirestore()
 const auth = getAuth()
   
-function writeUserData(userId, name, email)
+// function writeUserData(userId, name, email, password)
 const db1 = getDatabase()
 const reference = ref(db1, 'users/' + userId)
-
-
 
  //collection ref
  const colRef = collection(db, 'Profile')

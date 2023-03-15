@@ -31,9 +31,6 @@ const auth = getAuth()
  //collection ref
  const colRef = collection(db, 'Profile')
 
-//  const q = query(colRef, where("name", "==", "Charul"), orderBy('name', 'desc'))
- //get collection data
-
   onSnapshot(colRef, (snapshot)=> {
     let Profile = []
     snapshot.docs.forEach((doc)=>{

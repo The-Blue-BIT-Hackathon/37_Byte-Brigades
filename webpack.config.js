@@ -6,6 +6,7 @@ module.exports={
         home: './src/home/index.js',
         login: './src/login/index.js',
         signup: './src/signup/index.js',
+        preferences: './src/preferences/index.js'
     },
     output: {
         filename: '[name].js',

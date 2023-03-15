@@ -6,8 +6,11 @@ import {
 import {
   getAuth,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword, onAuthStateChanged
 } from 'firebase/auth'
-
+import{
+  ref, set
+}from'firebase/database'
 const firebaseConfig = {
     apiKey: "AIzaSyDTbVXdbcNdfLM4bninNCNkw_qHhOcu5es",
     authDomain: "mess-3a90c.firebaseapp.com",
@@ -30,9 +33,9 @@ onSnapshot(colRef, (snapshot)=> {
         Profile.push({...doc.data(), id: doc.id})
     })
     console.log(Profile)
-  })
+})
 
-// signing users up
+
 const signupForm = document.querySelector('.signup')
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -43,17 +46,32 @@ signupForm.addEventListener('submit', (e) => {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((cred) => {
+      const uid = cred.user.uid;
+
       addDoc(colRef, {
         name: signupForm.name.value,
         email: signupForm.email.value,
         password: signupForm.password.value
-        // createdAt: serverTimestamp()
       })
+
       console.log('user created:', cred.user)
       signupForm.reset()
-      window.location = "preferences.html"
+      
     })
-    .catch((err) => {
-      alert(err.message)
+    // window.location ="preferences.html"
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const uid = userCredential.user.uid;
+      firebase.database().ref('users/' + uid).set({
+        email: email,
+        lastLogin: new Date().getTime()
+      })
+      window.location.href ='www.google.com';
     })
-})
+  // onAuthStateChanged(user => {
+  //     if(user) {
+  //       window.location = 'preferences.html';
+  //     }
+  
+  //   })
+  })

@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, onSnapshot } from '@firebase/firestore'
-import { getAuth, signInWithEmailAndPassword } from '@firebase/auth'
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from '@firebase/auth'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDTbVXdbcNdfLM4bninNCNkw_qHhOcu5es",
@@ -14,8 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 
 const db = getFirestore()
-const auth = getAuth()
-
+const auth = getAuth() 
 const colRef = collection(db, 'Profile')
 
   onSnapshot(colRef, (snapshot)=> {
@@ -26,7 +25,8 @@ const colRef = collection(db, 'Profile')
     console.log(Profile)
   })
 
-  const loginForm = document.querySelector('.login')
+
+ const loginForm = document.querySelector('.login')
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault()
   
@@ -36,10 +36,20 @@ const colRef = collection(db, 'Profile')
     signInWithEmailAndPassword(auth, email, password)
       .then((cred) => {
         console.log('user logged in:', cred.user)
-        window.location = "index.html"
+        // window.location = "explore.html"
       })
       .catch((err) => {
         alert(err.message)
       })
-  
   })
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+      console.log("logged in")
+      console.log(uid)
+      
+    } else {
+      console.log("logged out")
+    }
+  });
