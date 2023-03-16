@@ -29,14 +29,6 @@ const auth = getAuth()
 
 var user = auth.currentUser;
 
-if (user) {
-  // User is signed in.
-  console.log(user)
-} else {
-  // No user is signed in.
-  console.log("NO")
-}
-
  //collection ref
 //  const colRef = collection(db, 'Profile')
 
@@ -99,6 +91,13 @@ if (user) {
 //     })
 //   })
 
-//   onAuthStateChanged(auth, (user) => {
-//     console.log('user status changed:', user)
-//   })
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    console.log("logged in")
+    console.log(uid, user.email)
+    
+  } else {
+    console.log("logged out")
+  }
+});

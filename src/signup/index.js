@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import {
     getFirestore, collection, onSnapshot,
-    addDoc
+    addDoc, setDoc, doc
 } from 'firebase/firestore'
 import {
   getAuth,
@@ -24,14 +24,6 @@ const auth = getAuth()
 
 var user = auth.currentUser;
 
-if (user) {
-  // User is signed in.
-  console.log(user)
-} else {
-  // No user is signed in.
-  console.log("NO")
-}
-
 const colRef = collection(db, 'Profile')
 
 onSnapshot(colRef, (snapshot)=> {
@@ -53,15 +45,26 @@ signupForm.addEventListener('submit', (e) => {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((cred) => {
-      addDoc(colRef, {
-        name: signupForm.name.value,
-        email: signupForm.email.value,
-        password: signupForm.password.value
-        // createdAt: serverTimestamp()
-      })
+    //   docRef.doc("ABC").set({
+    //     name: name,
+    //     email: email,
+    //     password: password
+    // })
+      // addDoc(colRef, {
+      //   name: signupForm.name.value,
+      //   email: signupForm.email.value,
+      //   password: signupForm.password.value
+      //   // createdAt: serverTimestamp()
+      // })
+      const data = {
+        name: name,
+        email: email,
+        password: password
+      }
+      setDoc(doc(db, "Profile", name), data)
       console.log('user created:', cred.user)
       signupForm.reset()
-      window.location = "preferences.html"
+      // window.location = "preferences.html"
     })
     .catch((err) => {
       alert(err.message)
