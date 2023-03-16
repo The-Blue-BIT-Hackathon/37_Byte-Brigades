@@ -1,62 +1,120 @@
 //Admin or Student login
 
 
-$('#options').change(function() {
-	var selectedOption = $(this).val();
-	console.log('Selected option: ' + selectedOption);
-	// Do something with the selected option
-});
 
 
 //to create card
 
+// function createCard(imageUrl, title, price) {
+// 	// Create card element
+// 	const card = document.createElement("div");
+// 	card.classList.add("card");
+  
+// 	// Create image element
+// 	const image = document.createElement("img");
+// 	image.src = imageUrl;
+// 	image.alt = "Product Image";
+// 	image.classList.add("card-image");
+// 	card.appendChild(image);
+  
+// 	// Create content element
+// 	const content = document.createElement("div");
+// 	content.classList.add("card-content");
+// 	card.appendChild(content);
+  
+// 	// Create title element
+// 	const titleElement = document.createElement("h3");
+// 	titleElement.textContent = title;
+// 	titleElement.classList.add("card-title");
+// 	content.appendChild(titleElement);
+  
+// 	// Create price element
+// 	const priceElement = document.createElement("p");
+// 	priceElement.textContent = price;
+// 	priceElement.classList.add("card-price");
+// 	content.appendChild(priceElement);
+  
+// 	// Create switch element
+// 	const switchToggle = document.createElement("label");
+// 	switchToggle.classList.add("switch");
+// 	content.appendChild(switchToggle);
+  
+// //	Create input element
+// 	const switchInput = document.createElement("input");
+// 	switchInput.type = "checkbox";
+// 	switchInput.classList.add("toggle-button");
+// 	switchToggle.appendChild(switchInput);
+  
+// 	// Create slider element
+// 	const slider = document.createElement("span");
+// 	slider.classList.add("slider", "round");
+// 	switchToggle.appendChild(slider);
+  
+// 	return card;
+//   }
+
+
+
+//test
+
+
 function createCard(imageUrl, title, price) {
-	// Create card element
-	const card = document.createElement("div");
-	card.classList.add("card");
-  
-	// Create image element
-	const image = document.createElement("img");
-	image.src = imageUrl;
-	image.alt = "Product Image";
-	image.classList.add("card-image");
-	card.appendChild(image);
-  
-	// Create content element
-	const content = document.createElement("div");
-	content.classList.add("card-content");
-	card.appendChild(content);
-  
-	// Create title element
-	const titleElement = document.createElement("h3");
-	titleElement.textContent = title;
-	titleElement.classList.add("card-title");
-	content.appendChild(titleElement);
-  
-	// Create price element
-	const priceElement = document.createElement("p");
-	priceElement.textContent = price;
-	priceElement.classList.add("card-price");
-	content.appendChild(priceElement);
-  
-	// Create switch element
-	const switchToggle = document.createElement("label");
-	switchToggle.classList.add("switch");
-	content.appendChild(switchToggle);
-  
-//	Create input element
-	const switchInput = document.createElement("input");
-	switchInput.type = "checkbox";
-	switchInput.classList.add("toggle-button");
-	switchToggle.appendChild(switchInput);
-  
-	// Create slider element
-	const slider = document.createElement("span");
-	slider.classList.add("slider", "round");
-	switchToggle.appendChild(slider);
-  
-	return card;
-  }
+  // Create card element
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  // Create image element
+  const image = document.createElement("img");
+  image.src = imageUrl;
+  image.alt = "Product Image";
+  image.classList.add("card-image");
+  card.appendChild(image);
+
+  // Create content element
+  const content = document.createElement("div");
+  content.classList.add("card-content");
+  card.appendChild(content);
+
+  // Create title element
+  const titleElement = document.createElement("h3");
+  titleElement.textContent = title;
+  titleElement.classList.add("card-title");
+  content.appendChild(titleElement);
+
+  // Create price element
+  const priceElement = document.createElement("p");
+  priceElement.textContent = price;
+  priceElement.classList.add("card-price");
+  content.appendChild(priceElement);
+
+  // Create switch element
+  const switchToggle = document.createElement("label");
+  switchToggle.classList.add("switch");
+  content.appendChild(switchToggle);
+
+  // Create input element
+  const switchInput = document.createElement("input");
+  switchInput.type = "checkbox";
+  switchInput.classList.add("toggle-button");
+
+  // Add event listener to the input element
+  switchInput.addEventListener("change", function() {
+    console.log("Toggle switch is " + (this.checked ? "on" : "off"));
+  });
+
+  switchToggle.appendChild(switchInput);
+
+  // Create slider element
+  const slider = document.createElement("span");
+  slider.classList.add("slider", "round");
+  switchToggle.appendChild(slider);
+
+  return card;
+}
+
+
+
+
   
   const products = [
 	{imageUrl: "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80.jpg", title: "Samosa", price: "$10.00"},
@@ -123,6 +181,7 @@ function createCard(imageUrl, title, price) {
   
     filterFoodItems();
     //     // Get the checkbox element
+// $(document).ready(function() {
 //     var createCardCheckbox = document.getElementById("createCardCheckbox");
 //     // Add event listener to the checkbox
 //     createCardCheckbox.addEventListener('change', function() {
@@ -226,42 +285,42 @@ function createCard(imageUrl, title, price) {
 // });
 
 $(document).ready(function() {
-    // Get the checkboxes
-    var checkboxes = document.querySelectorAll('input[type=checkbox]');
-    // Add event listener to each checkbox
-    for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].addEventListener('change', function() {
-        // Get the selected options table and body
-        var selectedOptionsTable = document.getElementById("selectedOptionsTable");
-        var selectedOptions = document.getElementById("selectedOptions");
-        // If the checkbox is checked, add the value to the selected options table
-        if (this.checked) {
-          // Create a new row and cells
-          var newRow = selectedOptions.insertRow();
-          var nameCell = newRow.insertCell();
-          var priceCell = newRow.insertCell();
-          // Add the values to the new cells
-          var nameText = document.createTextNode(this.value);
-          var priceText = document.createTextNode('$' + this.getAttribute('data-price'));
-          nameCell.appendChild(nameText);
-          priceCell.appendChild(priceText);
-          // Show the selected options table
-          selectedOptionsTable.style.display = "block";
-        } else {
-          // Find the row with the corresponding value and remove it
-          var rows = selectedOptions.getElementsByTagName("tr");
-          for (var i = 0; i < rows.length; i++) {
-            if (rows[i].cells[0].textContent === this.value) {
-              selectedOptions.deleteRow(i);
-              break;
-            }
-          }
-          // If there are no selected options left, hide the selected options table
-          if (selectedOptions.rows.length === 0) {
-            selectedOptionsTable.style.display = "none";
+  // Get the checkboxes
+  var checkboxes = document.querySelectorAll('input[type=checkbox]');
+  // Add event listener to each checkbox
+  for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].addEventListener('change', function() {
+      // Get the selected options table and body
+      var selectedOptionsTable = document.getElementById("selectedOptionsTable");
+      var selectedOptions = document.getElementById("selectedOptions");
+      // If the checkbox is checked, add the value to the selected options table
+      if (this.checked) {
+        // Create a new row and cells
+        var newRow = selectedOptions.insertRow();
+        var nameCell = newRow.insertCell();
+        var priceCell = newRow.insertCell();
+        // Add the values to the new cells
+        var nameText = document.createTextNode(this.value);
+        var priceText = document.createTextNode('$' + this.getAttribute('data-price'));
+        nameCell.appendChild(nameText);
+        priceCell.appendChild(priceText);
+        // Show the selected options table
+        selectedOptionsTable.style.display = "block";
+      } else {
+        // Find the row with the corresponding value and remove it
+        var rows = selectedOptions.getElementsByTagName("tr");
+        for (var i = 0; i < rows.length; i++) {
+          if (rows[i].cells[0].textContent === this.value) {
+            selectedOptions.deleteRow(i);
+            break;
           }
         }
-      });
-    }
-  });
-  
+        // If there are no selected options left, hide the selected options table
+        if (selectedOptions.rows.length === 0) {
+          selectedOptionsTable.style.display = "none";
+        }
+      }
+    });
+  }
+});
+
