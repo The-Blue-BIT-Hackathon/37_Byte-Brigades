@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Preferences</title>
+	<link rel="stylesheet" href="css/styles3.css">
+	<!-- bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+</head>
+<body>
+	<section class="Title">
+		<div class="container-fluid top">
+			<h1>Menu Items</h1>
+			<h2>Choose Today's Menu</h2>
+		</div>
+	</section>
+
+	<section class="Cards">
+		<div class="row cards">
+			  
+			<div class="card veg col-md-4 m-auto mb-5 bg-light-subtle" style="width: 20rem;" onclick="toggleSelection('veg')">
+				<img src="https://www.funfoodfrolic.com/wp-content/uploads/2020/09/Aloo-Ki-Sabzi-Thumbnail.jpg" class="card-img" alt="Peanuts Image">
+				<div class="card-img-overlay">
+				  <h5 class="card-title text-white">Aloo</h5>
+				</div>
+			</div>
+			<div class="card non-veg col-md-4 m-auto mb-5 bg-light-subtle" style="width: 20rem;" onclick="toggleSelection('non-veg')">
+				<img src="https://www.endofthefork.com/wp-content/uploads/2017/03/1200x1200-boiled-fluffy-rice-500x500.jpg" class="card-img" alt="Peanuts Image">
+				<div class="card-img-overlay">
+				  <h5 class="card-title text-white">Plain rice</h5>
+				</div>
+			</div>
+			<div class="card lactose-intolerance col-md-4 m-auto mb-5 bg-light-subtle" style="width: 20rem;" onclick="toggleSelection('lactose-intolerance')">
+				<img src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/02/dal-fry.jpg" class="card-img" alt="Peanuts Image">
+				<div class="card-img-overlay">
+				  <h5 class="card-title text-white">Dal</h5>
+				</div>
+			</div>
+			<div class="card gluten-intolerance col-md-4 m-auto mb-5 bg-light-subtle" style="width: 20rem;" onclick="toggleSelection('gluten-intolerance')">
+				<img src="https://images.aws.nestle.recipes/original/ccfe05a162f5adbd8eb1ab6723fd1d7d_A42I2974.jpg" class="card-img" alt="Peanuts Image">
+				<div class="card-img-overlay">
+				  <h5 class="card-title text-white">Chole</h5>
+				</div>
+			</div>
+			<div class="card peanut-allergy col-md-4 m-auto mb-5 bg-light-subtle" style="width: 20rem;" onclick="toggleSelection('peanut-allergy')">
+				<img src="https://static.toiimg.com/thumb/61203720.cms?width=1200&height=900" class="card-img" alt="Peanuts Image">
+				<div class="card-img-overlay">
+				  <h5 class="card-title text-white">Chapati</h5>
+				</div>
+			</div>
+			<div class="card soy-allergy col-md-4 m-auto mb-5 bg-light-subtle" style="width: 20rem;" onclick="toggleSelection('soy-allergy')">
+				<img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/03/matar-paneer.jpg" class="card-img" alt="Peanuts Image">
+				<div class="card-img-overlay">
+				  <h5 class="card-title text-white">Mutter Paneer</h5>
+				</div>
+			</div>
+			<div class="card eggs-allergy col-md-4 m-auto mb-5 bg-light-subtle" style="width: 20rem;" onclick="toggleSelection('eggs-allergy')">
+				<img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/06/mixed-vegetable-curry-recipe.jpg" class="card-img" alt="Peanuts Image">
+				<div class="card-img-overlay">
+				  <h5 class="card-title text-white">Mix Veg Bhaji</h5>
+				</div>
+			</div>
+			<div class="card fish-allergy col-md-4 m-auto mb-5 bg-light-subtle" style="width: 20rem;" onclick="toggleSelection('fish-allergy')">
+				<img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/06/Authentic-Punjabi-Rajma-Recipe.jpg" class="card-img" alt="Peanuts Image">
+				<div class="card-img-overlay">
+				  <h5 class="card-title text-white">Rajma</h5>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="pref">
+		<form>
+			<input type="hidden" id="preferences" name="preferences">
+			<button type="submit" class="btn btn-dark btn-lg">Save Preferences</button>
+		</form>
+		<div id="recommended-food"></div>
+	</div>
+	<script src="dist/preferences.js"></script>
+	<script>
+		var selectedCards = [];
+
+		function toggleSelection(cardType) {
+			var card = document.querySelector('.' + cardType);
+			if (selectedCards.includes(cardType)) {
+				card.classList.remove('selected');
+				selectedCards.splice(selectedCards.indexOf(cardType), 1);
+			} else {
+				card.classList.add('selected');
+				selectedCards.push(cardType);
+			}
+			document.getElementById('preferences').value = selectedCards.join(',');
+		}
+	</script>
+	
+</body>
+</html>
+

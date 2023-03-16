@@ -1,52 +1,86 @@
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    background-color: grey  ;
-    background-color: rgba(35, 31, 31, 0.7);
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    margin-top: 7rem;
- }
+@font-face {
+	font-family: 'Metropolis';
+	src: url('"C:\\Users\\joela\\Desktop\\messmain\\metropolis\\Metropolis-Black.otf"') format('otf')
+  }
 
+.container-1 {
+	max-width: 600px;
+}
  
- form {
-    margin-top: 30px;
- }
-
- label
- {
-   color: black;
-   font-family: 'Metropolis', sans-serif;
-   padding-left: 8rem;
- }
-
- .btn-primary {
-    padding-top: 0.5rem;
-    background-color: #FCAF17;
-    border-color: #dc3545;
-    width: 50%;
-    margin-left: 7rem;
+ body {
+	 background-color: #f8f9fa;
+	background-image: url(https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg);
+	background-size: cover;
  }
  
- .btn-primary:hover {
-    background-color: #FCAF17;
-    border-color: #FCAF17;
+ .overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: -1;
  }
-
- .form-group
- {
-    padding-bottom: 2rem;
- }
-
- .container
- {
-    padding-top: 0.5rem ;
- }
-
-
- .Login-page {
-    background-color: #f4d598;
-    padding: 40px;
- }
+ 
+  
+  .container {
+	 max-width: 500px;
+	 margin: 0 auto;
+	 padding: 30px;
+	 border: 1px solid #ccc;
+	 background-color: grey  ;
+	 background-color: rgba(35, 31, 31, 0.7);
+	 border-radius: 5px;
+	 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+	 margin-top: 7rem;
+  }
+  
+  form {
+	 margin-top: 30px;
+  }
+  
+  .btn-primary {
+	 background-color: #FCAF17;
+	 border-color: #dc3545;
+  }
+  
+  .btn-primary:hover {
+	 background-color: #FCAF17;
+	 border-color: #FCAF17;
+  }
+  
+  .btn-secondary {
+	 background-color: #FCAF17;
+	 border-color: #dc3545;
+  }
+  
+  .btn-secondary:hover {
+	 background-color: #FCAF17;
+	 border-color: #FCAF17;
+  }
+  
+  .form-control {
+	 background-color: #f2f2f2;
+	 color: #333;
+	 border: none;
+	 border-radius: 5px;
+  }
+  
+  .form-control:focus {
+	 box-shadow: none;
+	 border-color: #dc3545;
+  }
+ 
+  .text-center
+  {
+	color: white;
+	font-family: 'Metropolis', sans-serif;
+	letter-spacing: 2px;
+  }
+ 
+  label
+  {
+	color: white;
+	font-family: 'Metropolis', sans-serif;
+  }

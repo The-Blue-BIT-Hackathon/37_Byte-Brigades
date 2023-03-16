@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles2.css">
+
+</head>
+
+<body>
+    <section class="Title">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffffff;">
+            <a class="navbar-brand" href="#">DishWizard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            User's Name
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">Preferences</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <div class="title">
+        <div class= col-md-10>
+            <h2 style="margin-top: 50px;">Menu</h2>
+        </div>
+        <div class = "col-md-2">
+            <button id = "add-food-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addFoodModal">Add Food Item</button>
+        </div>
+    </div>
+    <br>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class = "col-md-8">
+              <div class="container">
+                <script src=script.js></script>
+              </div>
+            </div>
+              <div class="col-md-4">
+
+                <div id="selected-cards-table-container">
+
+                  <table id="selected-cards-table">
+                    <thead>
+                      <tr>
+                        <th>Card Name</th>
+                        <th>Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Selected cards will be added here dynamically -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+                  
+
+              </div>
+            </div>
+          </div>
+    </section>
+
+
+          <!-- Modal -->
+<div class="modal fade" id="addFoodModal" tabindex="-1" role="dialog" aria-labelledby="addFoodModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addFoodModalLabel">Add Food Item</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter food name">
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input type="text" class="form-control" id="price" placeholder="Enter food price">
+            </div>
+            <div class="form-group">
+              <label for="checkbox">Dietary Restrictions</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="veg">
+                <label class="form-check-label" for="veg">
+                  Vegetarian
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="nonveg">
+                <label class="form-check-label" for="nonveg">
+                  Non-Vegetarian
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="gluten">
+                <label class="form-check-label" for="gluten">
+                  Gluten
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="lactose">
+                <label class="form-check-label" for="lactose">
+                  Lactose
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="peanut">
+                <label class="form-check-label" for="peanut">
+                  Peanut
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="soy">
+                <label class="form-check-label" for="soy">
+                  Soy
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Item</button>
+            </form>
+            </div>
+            </div>
+            
+              </div>
+            </div> 
+
+
+
+              
+
+
+    </div>
+    </div>
+
+
+    <script>
+        // Get the button element
+        var addFoodBtn = document.getElementById('add-food-btn');
+        
+        // Get the modal element
+        var addFoodModal = document.getElementById('addFoodModal');
+        
+        // Add a click event listener to the button
+        addFoodBtn.addEventListener('click', function() {
+          // Display the modal
+          addFoodModal.style.display = 'block';
+        });
+        
+        // Add a click event listener to the close button in the modal
+        var closeModalBtn = addFoodModal.querySelector('.close');
+        closeModalBtn.addEventListener('click', function() {
+          // Hide the modal
+          addFoodModal.style.display = 'none';
+        });
+      </script>
+      
+
+
+<!-- 
+    <script>
+        var slider = document.querySelector(".slider");
+        var price = document.querySelector("#price");
+        price.innerHTML = slider.value;
+        slider.oninput = function () {
+            price.innerHTML = this.value;
+        }
+    </script> -->
+    <!-- <script src="menuscript.js"></script> -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,13 +1,14 @@
 import { initializeApp } from 'firebase/app'
 import {
     getFirestore, collection, onSnapshot,
-    addDoc
+    setDoc,
+    doc
 } from 'firebase/firestore'
 import {
   getAuth,
-  createUserWithEmailAndPassword, onAuthStateChanged
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword, onAuthStateChanged
 } from 'firebase/auth'
-
 const firebaseConfig = {
     apiKey: "AIzaSyDTbVXdbcNdfLM4bninNCNkw_qHhOcu5es",
     authDomain: "mess-3a90c.firebaseapp.com",
@@ -22,16 +23,6 @@ const app = initializeApp(firebaseConfig)
 const db = getFirestore()
 const auth = getAuth()
 
-var user = auth.currentUser;
-
-if (user) {
-  // User is signed in.
-  console.log(user)
-} else {
-  // No user is signed in.
-  console.log("NO")
-}
-
 const colRef = collection(db, 'Profile')
 
 onSnapshot(colRef, (snapshot)=> {
@@ -40,9 +31,9 @@ onSnapshot(colRef, (snapshot)=> {
         Profile.push({...doc.data(), id: doc.id})
     })
     console.log(Profile)
-  })
+})
 
-// signing users up
+
 const signupForm = document.querySelector('.signup')
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -53,21 +44,29 @@ signupForm.addEventListener('submit', (e) => {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((cred) => {
-      addDoc(colRef, {
+      const data = {
         name: signupForm.name.value,
         email: signupForm.email.value,
-        password: signupForm.password.value
-        // createdAt: serverTimestamp()
-      })
+        password: signupForm.password.value,
+        role: "student"
+      }
       console.log('user created:', cred.user)
       signupForm.reset()
-      window.location = "index.html"
+      setDoc(doc(db, 'Profile', email), data)
+      .then(() => {
+        window.location = "preferences.html"
+      })
     })
     .catch((err) => {
       alert(err.message)
     })
 })
 
-onAuthStateChanged(auth, (user) => {
-  console.log('user status changed:', user)
-})
+  onAuthStateChanged(user => {
+    if(user) {
+      console.log(user.name);
+    }
+    else {
+      console.log("Not login")
+    }
+  })
