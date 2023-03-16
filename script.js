@@ -285,42 +285,61 @@ function createCard(imageUrl, title, price) {
 // });
 
 $(document).ready(function() {
-  // Get the checkboxes
-  var checkboxes = document.querySelectorAll('input[type=checkbox]');
-  // Add event listener to each checkbox
-  for (var i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].addEventListener('change', function() {
-      // Get the selected options table and body
-      var selectedOptionsTable = document.getElementById("selectedOptionsTable");
-      var selectedOptions = document.getElementById("selectedOptions");
-      // If the checkbox is checked, add the value to the selected options table
-      if (this.checked) {
-        // Create a new row and cells
-        var newRow = selectedOptions.insertRow();
-        var nameCell = newRow.insertCell();
-        var priceCell = newRow.insertCell();
-        // Add the values to the new cells
-        var nameText = document.createTextNode(this.value);
-        var priceText = document.createTextNode('$' + this.getAttribute('data-price'));
-        nameCell.appendChild(nameText);
-        priceCell.appendChild(priceText);
-        // Show the selected options table
-        selectedOptionsTable.style.display = "block";
-      } else {
-        // Find the row with the corresponding value and remove it
-        var rows = selectedOptions.getElementsByTagName("tr");
-        for (var i = 0; i < rows.length; i++) {
-          if (rows[i].cells[0].textContent === this.value) {
-            selectedOptions.deleteRow(i);
-            break;
+    // Get the checkboxes
+    var checkboxes = document.querySelectorAll('input[type=checkbox]');
+    // Add event listener to each checkbox
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].addEventListener('change', function() {
+        // Get the selected options table and body
+        var selectedOptionsTable = document.getElementById("selectedOptionsTable");
+        var selectedOptions = document.getElementById("selectedOptions");
+        // If the checkbox is checked, add the value to the selected options table
+        if (this.checked) {
+          // Create a new row and cells
+          var newRow = selectedOptions.insertRow();
+          var nameCell = newRow.insertCell();
+          var priceCell = newRow.insertCell();
+          var qtyCell = newRow.insertCell()
+          // Add the values to the new cells
+          var nameText = document.createTextNode(this.value);
+          var priceText = document.createTextNode('$' + this.getAttribute('data-price'));
+          var qtyText = document.createTextNode(this.getAttribute('quantity'))
+          nameCell.appendChild(nameText);
+          priceCell.appendChild(priceText);
+          qtyCell.appendChild(qtyText);
+          // Show the selected options table
+          selectedOptionsTable.style.display = "block";
+        } else {
+          // Find the row with the corresponding value and remove it
+          var rows = selectedOptions.getElementsByTagName("tr");
+          for (var i = 0; i < rows.length; i++) {
+            if (rows[i].cells[0].textContent === this.value) {
+              selectedOptions.deleteRow(i);
+              break;
+            }
+          }
+          // If there are no selected options left, hide the selected options table
+          if (selectedOptions.rows.length === 0) {
+            selectedOptionsTable.style.display = "none";
           }
         }
-        // If there are no selected options left, hide the selected options table
-        if (selectedOptions.rows.length === 0) {
-          selectedOptionsTable.style.display = "none";
-        }
-      }
+      });
+    }
+  });
+  
+ jQuery(document).ready(($) => {
+        $('.quantity').on('click', '.plus', function(e) {
+            let $input = $(this).prev('input.qty');
+            let val = parseInt($input.val());
+            $input.val( val+1 ).change();
+        });
+ 
+        $('.quantity').on('click', '.minus', 
+            function(e) {
+            let $input = $(this).next('input.qty');
+            var val = parseInt($input.val());
+            if (val > 0) {
+                $input.val( val-1 ).change();
+            } 
+        });
     });
-  }
-});
-
