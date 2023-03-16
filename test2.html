@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="css/styles5.css">
+
+</head>
+
+<body>
+    <section class="Title">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffffff;">
+            <a class="navbar-brand" href="#">DishWizard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            User's Name
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">Preferences</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <div class="title">
+        <h2 style="margin-top: 50px;">Menu</h2>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-5 ">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Salad</h5>
+                            <p class="card-text">Price: $6.00</p>
+                            <input type="checkbox" value="Salad" data-price="6.00">
+                            <form id='myform' method='POST' class='quantity' action='#'>
+                                <input type='button' value1='-' class='qtyminus minus' field='quantity' />
+                                <input type='text' name='quantity' value1='0' class='qty' style="width: 10%;" />
+                                <input type='button' value1='+' class='qtyplus plus' field='quantity' />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Burger</h5>
+                            <p class="card-text">Price: $8.00</p>
+                            <input type="checkbox" value="Burger" data-price="8.00">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/2474658/pexels-photo-2474658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Pizza</h5>
+                            <p class="card-text">Price: $10.00</p>
+                            <input type="checkbox" value="Pizza" data-price="10.00">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/674574/pexels-photo-674574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 3</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat the above card HTML to add more items -->
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/209540/pexels-photo-209540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 1</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 1</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/2474658/pexels-photo-2474658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 2</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/674574/pexels-photo-674574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 3</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat the above card HTML to add more items -->
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/209540/pexels-photo-209540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 1</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 1</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/2474658/pexels-photo-2474658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 2</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/674574/pexels-photo-674574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 3</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat the above card HTML to add more items -->
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/209540/pexels-photo-209540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Item 1</h5>
+                            <p class="card-text">100</p>
+                            <input type="checkbox" name="option2" value="Option 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Selected Options Table -->
+        <div class="col-md-4">
+            <table id="selectedOptionsTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Food</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="selectedOptions"></tbody>
+            </table>
+        </div>
+        </section>
+
+        <section class="selected">
+
+        </section>
+
+    </div>
+    </div>
+
+
+
+
+    <!-- Include Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Include custom JavaScript -->
+	<script src="script.js"></script>
+</body>
+
+</html>
