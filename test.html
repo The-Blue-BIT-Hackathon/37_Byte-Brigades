@@ -1,0 +1,28 @@
+Initialize Firebase app
+firebase.initializeApp(firebaseConfig);
+
+Authenticate user with Firebase Authentication
+firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // User is authenticated, retrieve data from Firebase Realtime Database
+    const foodsRef = firebase.database().ref('foods');
+    foodsRef.on('value', (snapshot) => {
+      const foods = snapshot.val();
+      // Render data into table on user login page
+      const tableBody = document.querySelector('#table-body');
+      Object.keys(foods).forEach((key) => {
+        const food = foods[key];
+        const row = document.createElement('tr');
+        const nameCol = document.createElement('td');
+        const priceCol = document.createElement('td');
+        nameCol.textContent = food['food item name'];
+        priceCol.textContent = food.price;
+        row.appendChild(nameCol);
+        row.appendChild(priceCol);
+        tableBody.appendChild(row);
+      });
+    });
+  })
+  .catch((error) => {
+    console.error(error);
+  });
