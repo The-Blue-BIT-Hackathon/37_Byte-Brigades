@@ -9,7 +9,8 @@ module.exports={
         preferences: './src/preferences/index.js',
         available: './src/available/index.js',
         login_admin: './src/login_admin/index.js',
-        admin: './src/admin/index.js'
+        admin: './src/admin/index.js',
+        menu: './src/admin/index.js'
     },
     output: {
         filename: '[name].js',

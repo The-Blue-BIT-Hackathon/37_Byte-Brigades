@@ -1,4 +1,4 @@
-import {initializeApp} from 'firebase/app'
+import { initializeApp } from 'firebase/app'
 import {
     getFirestore, collection, onSnapshot,
     addDoc
@@ -16,31 +16,29 @@ const firebaseConfig = {
     appId: "1:267416052298:web:af4c6431b93903f60c3cb3"
   };
 
-initializeApp(firebaseConfig)
+  const app = initializeApp(firebaseConfig)
 
   const db = getFirestore()
   const auth = getAuth()
+  
   var user = auth.currentUser;
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const uid = user.uid;
-      console.log("logged in")
-      console.log(uid)
-      
-    } else {
-      console.log("logged out")
-    }
-  });
+  if (user) {
+    // User is signed in.
+    console.log(user)
+  } else {
+    // No user is signed in.
+    console.log("NO")
+  }
 
-  const colRef = collection(db, 'Admin')
+  const colRef = collection(db, 'Preferences')
 
   onSnapshot(colRef, (snapshot)=> {
-    let Admin = []
+    let Preferences = []
     snapshot.docs.forEach((doc)=>{
-        Admin.push({...doc.data(), id: doc.id})
+        Preferences.push({...doc.data(), id: doc.id})
     })
-    console.log(Admin)
+    console.log(Preferences)
   })
 
 const pref = document.querySelector('.pref')
@@ -48,9 +46,33 @@ pref.addEventListener('submit', (e) => {
     e.preventDefault()
 
     addDoc((colRef), {
-        menu: selectedCards,
-
+        card: selectedCards,
     }) 
+    .then(() => {
+        window.location = "menu.html"
+    })
 
 })
 
+onAuthStateChanged(auth, (user) => {
+  console.log('user status changed:', user)
+})
+
+// var selectedCards = [];
+
+// function toggleSelection(cardType) {
+//     var card = document.querySelector('.' + cardType);
+//     if (selectedCards.includes(cardType)) {
+//         card.classList.remove('selected');
+//         selectedCards.splice(selectedCards.indexOf(cardType), 1);
+//         console.log("unselected")
+//         console.log(selectedCards)
+//     } else {
+//         card.classList.add('selected');
+//         selectedCards.push(cardType);
+//         console.log(cardType)
+//         console.log("selected")
+//         console.log(selectedCards)
+//     }
+//     document.getElementById('preferences').value = selectedCards.join(',');
+// }

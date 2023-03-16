@@ -43,7 +43,7 @@ const colRef = collection(db, 'Profile')
     console.log('user logged in:', cred.user)
         
 
-        window.location = "explore.html"
+        window.location = "menu.html"
       })
       .catch((err) => {
         alert(err.message)
