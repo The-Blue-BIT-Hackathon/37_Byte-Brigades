@@ -1,3 +1,8 @@
+#middle
+{
+  background-color: #FCEEC7 ;
+}
+
 /* Style for the left-hand side with the cards and checkboxes */
 #left {
     float: left;
@@ -49,10 +54,10 @@ table {
     }
   }
 
-  #myform {
-    /* padding: 2px; */
-    /* margin: 2%; */
-}
+/* #myform {
+    padding: 2px;
+    margin: 2%;
+} */
 .qty {
     width: 40px;
     height: 25px;
@@ -66,4 +71,9 @@ input.qtyminus { width:25px; height:25px;}
 #selectedOptionsTable {
     display: none;
     
+}
+
+.feedback
+{
+  padding: 2rem 2rem 2rem 25rem;
 }

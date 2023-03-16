@@ -5,28 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/styles2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles5.css">
+    <link rel="stylesheet" href="css/styles2.css">
+
 
 </head>
 
 <body>
     <section class="Title">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffffff;">
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgb(255, 255, 255);">
             <a class="navbar-brand" href="#">DishWizard</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             User's Name
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -39,6 +38,8 @@
             </div>
         </nav>
     </section>
+
+    <section id="middle">
     <div class="title">
         <h2 style="margin-top: 50px;">Menu</h2>
     </div>
@@ -46,28 +47,234 @@
     <div class="container-fluid">
         <div class="row">
             <div class="container col-md-8">
-                <script src="script.js"></script>
+                <script src="menuscript.js"></script>
             </div>
             <div class="col-md-4">
 
             </div>
         </div>
     </div>
+    </section>
 
     </section>
 
-    </div>
-    </div>
+    <section id="Review">
+        <div class="container mt-4">
+            <h1 class="text-center mb-4">Mess Service Feedback</h1>
+            <form class="feedback">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>1. How satisfied are you with the quality of the food provided?	</label>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="foodQuality" id="bad" value="bad">
+                        <label class="form-check-label" for="bad">
+                            Bad
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="foodQuality" id="fair" value="fair">
+                        <label class="form-check-label" for="fair">
+                            Fair
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="foodQuality" id="good" value="good">
+                        <label class="form-check-label" for="good">
+                            Good
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="foodQuality" id="veryGood" value="veryGood">
+                        <label class="form-check-label" for="veryGood">
+                            Very Good
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="foodQuality" id="excellent" value="excellent">
+                        <label class="form-check-label" for="excellent">
+                            Excellent
+                        </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>2. Were the meals healthy and nutritious?</label>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="customerService" id="bad" value="bad">
+                        <label class="form-check-label" for="bad">
+                            Bad
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="customerService" id="fair" value="fair">
+                        <label class="form-check-label" for="fair">
+                            Fair
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="customerService" id="good" value="good">
+                        <label class="form-check-label" for="good">
+                            Good
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="customerService" id="veryGood" value="veryGood">
+                        <label class="form-check-label" for="veryGood">
+                            Very Good
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="customerService" id="excellent" value="excellent">
+                        <label class="form-check-label" for="excellent">
+                            Excellent
+                        </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>3. How satisfied are you with the cleanliness and hygiene of the mess hall?</label>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="cleanlinessQuality" id="bad" value="bad">
+                        <label class="form-check-label" for="bad">
+                            Bad
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="cleanlinessQuality" id="fair" value="fair">
+                        <label class="form-check-label" for="fair">
+                            Fair
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="cleanlinessQuality" id="good" value="good">
+                        <label class="form-check-label" for="good">
+                            Good
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="cleanlinessQuality" id="veryGood" value="veryGood">
+                        <label class="form-check-label" for="veryGood">
+                            Very Good
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="cleanlinessQuality" id="excellent" value="excellent">
+                        <label class="form-check-label" for="excellent">
+                            Excellent
+                        </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                <label>4. How satisfied are you with the behavior and professionalism of the mess staff?	</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="professionalism" id="bad" value="bad">
+                  <label class="form-check-label" for="bad">
+                    Bad
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="professionalism" id="fair" value="fair">
+                  <label class="form-check-label" for="fair">
+                    Fair
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="professionalism" id="good" value="good">
+                  <label class="form-check-label" for="good">
+                    Good
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="professionalism" id="veryGood" value="veryGood">
+                  <label class="form-check-label" for="veryGood">
+                    Very Good
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="professionalism" id="excellent" value="excellent">
+                  <label class="form-check-label" for="excellent">
+                    Excellent
+                  </label>
+                </div>
+              </div>
+                </div>
+                <div class="form-check">
+                    <label for="review">Review:</label>
+                    <textarea id="review" name="review" class="form-control" placeholder="Enter your review" rows="5" required></textarea>
+                </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>          
+
+    </section>
 
 
+    <script>
+        
+        // get all the foodQuality checkboxes
+        const foodQualityCheckboxes = document.querySelectorAll('input[name="foodQuality"]');
 
+        // add click event listener to each foodQuality checkbox
+        foodQualityCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('click', function() {
+            // uncheck all other checkboxes
+            foodQualityCheckboxes.forEach(function(otherCheckbox) {
+            if (otherCheckbox !== checkbox) {
+                otherCheckbox.checked = false;
+            }
+            });
+        });
+        });
+
+        // get all the customerService checkboxes
+        const customerServiceCheckboxes = document.querySelectorAll('input[name="customerService"]');
+
+        // add click event listener to each customerService checkbox
+        customerServiceCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('click', function() {
+            // uncheck all other checkboxes
+            customerServiceCheckboxes.forEach(function(otherCheckbox) {
+            if (otherCheckbox !== checkbox) {
+                otherCheckbox.checked = false;
+            }
+            });
+        });
+        });
+
+            // get all the foodQuality checkboxes
+            const cleanlinessQualityCheckboxes = document.querySelectorAll('input[name="cleanlinessQuality"]');
+
+            // add click event listener to each foodQuality checkbox
+            cleanlinessQualityCheckboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('click', function() {
+                // uncheck all other checkboxes
+                cleanlinessQualityCheckboxes.forEach(function(otherCheckbox) {
+                if (otherCheckbox !== checkbox) {
+                    otherCheckbox.checked = false;
+            }
+            });
+        });
+        });
+
+        // get all the foodQuality checkboxes
+        const professionalismCheckboxes = document.querySelectorAll('input[name="professionalism"]');
+
+        // add click event listener to each foodQuality checkbox
+        professionalismCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('click', function() {
+            // uncheck all other checkboxes
+            professionalismCheckboxes.forEach(function(otherCheckbox) {
+            if (otherCheckbox !== checkbox) {
+                otherCheckbox.checked = false;
+            }
+            });
+        });
+        });
+
+    </script>
 
     <!-- Include Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- Include custom JavaScript -->
-    <script src="menuscript.js"></script>
 </body>
 
 </html>
