@@ -123,11 +123,14 @@ $(document).ready(function() {
           var newRow = selectedOptions.insertRow();
           var nameCell = newRow.insertCell();
           var priceCell = newRow.insertCell();
+          var qtyCell = newRow.insertCell()
           // Add the values to the new cells
           var nameText = document.createTextNode(this.value);
           var priceText = document.createTextNode('$' + this.getAttribute('data-price'));
+          var qtyText = document.createTextNode(this.getAttribute('quantity'))
           nameCell.appendChild(nameText);
           priceCell.appendChild(priceText);
+          qtyCell.appendChild(qtyText);
           // Show the selected options table
           selectedOptionsTable.style.display = "block";
         } else {
@@ -148,3 +151,19 @@ $(document).ready(function() {
     }
   });
   
+ jQuery(document).ready(($) => {
+        $('.quantity').on('click', '.plus', function(e) {
+            let $input = $(this).prev('input.qty');
+            let val = parseInt($input.val());
+            $input.val( val+1 ).change();
+        });
+ 
+        $('.quantity').on('click', '.minus', 
+            function(e) {
+            let $input = $(this).next('input.qty');
+            var val = parseInt($input.val());
+            if (val > 0) {
+                $input.val( val-1 ).change();
+            } 
+        });
+    });

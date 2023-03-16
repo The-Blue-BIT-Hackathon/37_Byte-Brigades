@@ -1,26 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Dropdown Menu Example</title>
-	<!-- Include Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<!-- Include custom CSS -->
-	<link rel="stylesheet" href="css/styles5.css">
-</head>
-<body>
-	<div class="container mt-5">
-		<label for="options">Select an option:</label>
-		<select id="options" class="form-control">
-			<option value="option1">Option 1</option>
-			<option value="option2">Option 2</option>
-			<option value="option3">Option 3</option>
-		</select>
-	</div>
-	<!-- Include jQuery and Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<!-- Include custom JavaScript -->
-	<script src="script.js"></script>
-</body>
-</html>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6" id="left">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Product 1</h5>
+            <p class="card-text">Price: $10</p>
+            <div class="form-group">
+              <label for="product1Quantity">Quantity:</label>
+              <input type="number" class="form-control" id="product1Quantity" value="0">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input product-checkbox" type="checkbox" value="Product 1" id="product1Checkbox">
+              <label class="form-check-label" for="product1Checkbox">
+                Add to cart
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Product 2</h5>
+            <p class="card-text">Price: $15</p>
+            <div class="form-group">
+              <label for="product2Quantity">Quantity:</label>
+              <input type="number" class="form-control" id="product2Quantity" value="0">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input product-checkbox" type="checkbox" value="Product 2" id="product2Checkbox">
+              <label class="form-check-label" for="product2Checkbox">
+                Add to cart
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" id="right">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody id="selectedOptions">
+          </tbody>
+        </table>
+        <div id="total"></div>
+      </div>
+    </div>
+  </div>
+  

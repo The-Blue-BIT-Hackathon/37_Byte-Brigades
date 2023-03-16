@@ -48,6 +48,18 @@ table {
       padding: 6px;
     }
   }
+
+  #myform {
+    /* padding: 2px; */
+    /* margin: 2%; */
+}
+.qty {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
   
 
 /* Hide the selected options table initially */
